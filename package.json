@@ -1,0 +1,26 @@
+{
+  "name": "react-native-loading-hoc",
+  "version": "0.1.0",
+  "description": "RN Loading-HOC",
+  "main": "./dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loycord/react-native-loading-hoc.git"
+  },
+  "scripts": {
+    "prepublish": "tsc",
+    "clean": "rm -r dist"
+  },
+  "author": "Seung Yeon Kim <loycord.ceo@gmail.com> (https://loycord.com)",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "~0.55.2",
+    "react-navigation": "^2.12.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.4.11",
+    "@types/react-native": "^0.56.12",
+    "@types/react-navigation": "^2.0.17"
+  }
+}
