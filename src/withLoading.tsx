@@ -17,7 +17,7 @@ const initialOptions: Options = {
 };
 
 function withLoading(
-  Component: React.ComponentClass<any>,
+  Component: React.ComponentClass<any> | any,
   options: Options = initialOptions
 ) {
   options = { ...initialOptions, ...options };

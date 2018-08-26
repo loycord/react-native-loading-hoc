@@ -6,13 +6,14 @@ export interface State {
   state: LoadingState;
   start: () => void;
   end: (state?: LoadingState) => void;
-  apply?: (callback: () => Promise<any>) => void;
+  apply: (callback: () => Promise<any>) => void;
 }
 
 export const initialState: State = {
   state: 'settled',
   start: () => {},
-  end: () => {}
+  end: () => {},
+  apply: () => {}
 };
 
 export default React.createContext(initialState);
