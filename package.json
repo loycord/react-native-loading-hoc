@@ -1,6 +1,6 @@
 {
   "name": "react-native-loading-hoc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "RN Loading-HOC",
   "main": "./dist/index.js",
   "repository": {
