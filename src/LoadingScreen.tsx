@@ -1,21 +1,21 @@
-import * as React from 'react';
-import { ActivityIndicator, Animated, StyleSheet } from 'react-native';
-import { State as LoadingState } from './context';
+import * as React from "react";
+import { ActivityIndicator, Animated, StyleSheet } from "react-native";
+import { State as LoadingState } from "./context";
 // types
-import { Options } from './withLoading';
+import { Options } from "./withLoading";
 
 const styles = StyleSheet.create({
   container: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
+    position: "absolute",
+    width: "100%",
+    height: "100%",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: 'rgba(255,255,255,0.85)',
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: "rgba(255,255,255,0.85)",
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 
@@ -39,7 +39,7 @@ class LoadingScreen extends React.PureComponent<Props, State> {
   }
 
   static getDerivedStateFromProps(props: Props, state: State) {
-    if (props.loading.state === 'pending' && state.hide) {
+    if (props.loading.state === "pending" && state.hide) {
       return { hide: false };
     }
     return null;
@@ -49,7 +49,7 @@ class LoadingScreen extends React.PureComponent<Props, State> {
     const { state } = this.props.loading;
     const { duration } = this.props.options;
 
-    const loading: boolean = state === 'pending';
+    const loading: boolean = state === "pending";
 
     Animated.timing(this.state.anim, {
       toValue: loading ? 1 : 0,
@@ -64,9 +64,16 @@ class LoadingScreen extends React.PureComponent<Props, State> {
   render() {
     if (this.state.hide) return null;
     this.animate();
-    const { style, renderSpinner, spinnerColor, spinnerSize } = this.props.options;
+    const {
+      style,
+      renderSpinner,
+      spinnerColor,
+      spinnerSize
+    } = this.props.options;
     return (
-      <Animated.View style={[styles.container, { opacity: this.state.anim }, style]}>
+      <Animated.View
+        style={[styles.container, { opacity: this.state.anim }, style]}
+      >
         {renderSpinner ? (
           renderSpinner()
         ) : (

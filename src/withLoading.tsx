@@ -1,18 +1,18 @@
-import * as React from 'react';
-import Context from './context';
-import LoadingScreen from './LoadingScreen';
+import * as React from "react";
+import Context from "./context";
+import LoadingScreen from "./LoadingScreen";
 
 export interface Options {
   style?: {};
-  spinnerSize?: number | 'small' | 'large';
+  spinnerSize?: number | "small" | "large";
   spinnerColor?: string;
   duration?: number;
   renderSpinner?: () => Element;
 }
 
 const initialOptions: Options = {
-  spinnerSize: 'large',
-  spinnerColor: '#043B40',
+  spinnerSize: "large",
+  spinnerColor: "#043B40",
   duration: 1500
 };
 
@@ -28,7 +28,11 @@ function withLoading(
           {loading => (
             <React.Fragment>
               <Component {...this.props} loading={loading} />
-              <LoadingScreen {...this.props} loading={loading} options={options} />
+              <LoadingScreen
+                {...this.props}
+                loading={loading}
+                options={options}
+              />
             </React.Fragment>
           )}
         </Context.Consumer>
