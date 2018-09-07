@@ -21,13 +21,21 @@ function withLoading(
   options: Options = initialOptions
 ) {
   options = { ...initialOptions, ...options };
-  return class extends React.Component {
+  return class extends React.Component<{ screenProps?: any }> {
     public render() {
+      let screenProps = {};
+      if (this.props.screenProps) {
+        screenProps = this.props.screenProps;
+      }
       return (
         <Context.Consumer>
           {loading => (
             <React.Fragment>
-              <Component {...this.props} loading={loading} />
+              <Component
+                {...this.props}
+                loading={loading}
+                screenProps={{ ...screenProps, loading }}
+              />
               <LoadingScreen
                 {...this.props}
                 loading={loading}

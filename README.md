@@ -87,3 +87,16 @@ this.props.loading.apply(wait);
 
 // start -> wait -> end
 ```
+
+## Support
+
+### [react-navigation](https://reactnavigation.org/)
+
+```javascript
+withLoading(createBottomTabNavigator({
+  Home: HomeScreen,
+  Settings: SettingsScreen,
+});
+
+// Home, Settings -> screenProps.loading
+```
